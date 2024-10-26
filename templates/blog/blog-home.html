@@ -111,15 +111,15 @@
 					</div>
 					<div class="col-lg-9 col-md-9">
 						<div class="feature-img">
-							<img class="img-fluid" src="{% static 'blog/feature-img4.jpg' %}" alt="">
+							<img class="img-fluid" src="{{ x.image.url }}" alt="">
 						</div>
 						<a class="posts-title" href="blog-single.html">
-							<h3>{{post.title}}</h3>
+							<h3>{{x.title}}</h3>
 						</a>
 						<p class="excert">
 							{{x.content}}
 						</p>
-						<a href="blog-single.html" class="primary-btn">View More</a>
+						<a href="{% url 'blog:single' pid=x.id %}" class="primary-btn">View More</a>
 					</div>
 				</div>
 				{% endfor %}
